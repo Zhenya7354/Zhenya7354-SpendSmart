@@ -1,0 +1,14 @@
+﻿@model SpendSmart_Second_Web_application_.Models.UserModel
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+    <a asp-controller="Home" asp-action="Expense" class="btn btn-primary">Overview</a>
+    <a asp-controller="Home" asp-action="CreateEdit" class="btn btn-secondary">Create new</a>
+</div>
+
+@* <form asp-controller="Account" asp-action="DeleteUserAsync" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Видалити користувача</button>
+</form> *@

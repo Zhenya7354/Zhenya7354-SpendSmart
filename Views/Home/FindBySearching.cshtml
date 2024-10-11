@@ -1,0 +1,27 @@
+﻿@model SpendSmart_Second_Web_application_.Models.Expense
+
+<h1>Your searching expense:</h1>
+
+<table>
+    <tr>
+        <td>
+            @Model.Id
+        </td>
+        <td>
+            @Model.Value
+        </td>
+        <td>
+            @Model.Description
+        </td>
+        <td>
+            @Model.Category
+        </td>
+
+        <td>
+            <a asp-action="CreateEdit" asp-controller="Home" asp-route-id="@Model.Id">Edit</a>
+            <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<a asp-controller="Home" asp-action="Expense" class="btn btn-primary">Return to expenses</a>

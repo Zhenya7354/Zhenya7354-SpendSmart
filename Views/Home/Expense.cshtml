@@ -1,0 +1,66 @@
+﻿@model IEnumerable<SpendSmart_Second_Web_application_.Models.Expense>
+@{
+    ViewData["Title"] = "Expense";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Your Expenses</h1>
+   
+</div>
+<table>
+    <br />
+    <hr />
+    <h3>Total expenses: @ViewBag.Exp </h3>
+    <br />
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Value
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Category
+            </th>
+
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Value
+                    </td>
+                    <td>
+                        @item.Description
+                    </td>
+                    <td>
+                        @item.Category
+                    </td>
+
+                    <td>
+                        <a asp-action="CreateEdit" asp-controller="Home" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div class="text-center">
+<a class="btn btn-primary" class="text-center" asp-controller="Home" asp-action="CreateEdit">Create new expense</a>
+<a class="btn btn-secondary" class="text-center" asp-controller="Home" asp-action="SearchForm">Search expense</a>
+
+</div>

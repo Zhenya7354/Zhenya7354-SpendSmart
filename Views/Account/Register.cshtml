@@ -1,0 +1,17 @@
+﻿@model SpendSmart_Second_Web_application_.Models.Register
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form>
+    <label asp-for="Name">Name</label>
+    <input class="form-control" asp-for="Name" type = "text" placeholder="Come up with your nickname" required/>
+     <label asp-for="Email">Email</label>
+    <input class="form-control" asp-for="Email" type="email" placeholder="Write your email" />
+     <label asp-for="Password">Password</label>
+    <input class="form-control" asp-for="Password" type="password" placeholder="Must be longer than 3 symbols" required/>
+    <button class="btn btn-primary" type="submit">Sign up</button>
+</form>
+

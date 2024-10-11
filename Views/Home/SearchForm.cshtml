@@ -1,0 +1,12 @@
+﻿@model SpendSmart_Second_Web_application_.Models.Search
+
+
+<h1>Search</h1>
+
+<form asp-action="FindBySearching" asp-controller="Home">
+    <label class="mt-4">Id</label>
+    <input class="text-center" asp-for="Id" type="number" step="1" required /><br />
+
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+
