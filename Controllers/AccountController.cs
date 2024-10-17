@@ -18,8 +18,10 @@ namespace SpendSmart_Second_Web_application_.Controllers
         public async Task<IActionResult> Login(Login login)
         {
             if (!ModelState.IsValid) { return View(login); }
-            await _SignInManager.PasswordSignInAsync(login.Name, login.Password, false, false);
-            return RedirectToAction("Index","Home");
+            var result = await _SignInManager.PasswordSignInAsync(login.Name, login.Password, false, false);
+            if (result.Succeeded)
+            { return RedirectToAction("Index", "Home"); }
+            return View(login);
         }
 
         public async Task<IActionResult> Register(Register register)
